@@ -82,28 +82,6 @@ public class Publication {
     public Publication() {
     }
 
-    public Publication(String iuid, String title, Author author, String journal, String issn, String issnL, int publicationYear, Date published, Date ePublished, Integer volume, String issue, String pages, String doi, Integer pmid, Set<Label> labels, Set<Qualifier> qualifiers, String url, String doiUrl, String pubMedUrl) {
-        this.iuid = iuid;
-        this.title = title;
-        this.author = author;
-        this.journal = journal;
-        this.issn = issn;
-        this.issnL = issnL;
-        this.publicationYear = publicationYear;
-        this.published = published;
-        this.ePublished = ePublished;
-        this.volume = volume;
-        this.issue = issue;
-        this.pages = pages;
-        this.doi = doi;
-        this.pmid = pmid;
-        this.labels = labels;
-        this.qualifiers = qualifiers;
-        this.url = url;
-        this.doiUrl = doiUrl;
-        this.pubMedUrl = pubMedUrl;
-    }
-
     public String getIuid() {
         return iuid;
     }
@@ -260,4 +238,11 @@ public class Publication {
         this.pubMedUrl = pubMedUrl;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 }
