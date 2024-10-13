@@ -16,20 +16,14 @@ public class PublicationServices {
     @Autowired
     PublicationRepository repository;
 
-    public List<Publication> findByYear(int year){
-        List<Publication> publications = new ArrayList<>();
-        for(int i = 0; i <8; i++){
-            Publication publication = mockPublication(i, year, "");
-            publications.add(publication);
-        }
-        return publications;
-
+    public List<Publication> findByPublicationYear(int year){
+        return repository.findByPublicationYear(year);
     }
 
     public Publication findByDOI(String doi){
-       return mockPublication(0, 2024, doi);
-
+       return repository.findByDoi(doi);
     }
+
 
     public Publication mockPublication(int i, int year, String doi){
         Publication publication = new Publication();

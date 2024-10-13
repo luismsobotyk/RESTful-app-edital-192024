@@ -1,6 +1,5 @@
 package com.example.restfulappedital192024.controller;
 
-import com.example.restfulappedital192024.model.Greeting;
 import com.example.restfulappedital192024.model.Publication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +17,15 @@ public class PublicationController {
     @Autowired
     private PublicationServices service;
 
-    @RequestMapping("/test")
-    public Greeting greeting(@RequestParam(value= "name", defaultValue = "World") String name){
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
-    }
-
-    @GetMapping("/findByDOI/{doi}")
-    public Publication findByDOI(@PathVariable("doi") String doi){
+    @GetMapping("/findByDoi")
+    public Publication findByDOI(@RequestParam String doi){
+        // Usage example: http://localhost:8080/findByDoi?doi=10.1371/journal.pgen.1002412
         return service.findByDOI(doi);
     }
 
     @GetMapping("/findByYear/{year}")
     public List<Publication> findByYear(@PathVariable("year") int year){
-        return service.findByYear(year);
+        return service.findByPublicationYear(year);
     }
 
 
