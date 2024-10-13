@@ -17,11 +17,19 @@ public class PublicationServices {
     PublicationRepository repository;
 
     public List<Publication> findByPublicationYear(int year){
+        List<Publication> publications = repository.findByPublicationYear(year);
+        if (publications.isEmpty()) {
+            throw new ResourceNotFoundException("Nenhuma publicação encontrada para o ano informado!");
+        }
         return repository.findByPublicationYear(year);
     }
 
     public Publication findByDOI(String doi){
-       return repository.findByDoi(doi);
+        Publication publication= repository.findByDoi(doi);
+        if(publication==null){
+            throw new ResourceNotFoundException("Nenhuma publicação encontrada para o DOI informado!");
+        }
+        return publication;
     }
 
 
