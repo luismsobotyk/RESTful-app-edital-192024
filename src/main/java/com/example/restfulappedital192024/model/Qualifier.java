@@ -1,5 +1,6 @@
 package com.example.restfulappedital192024.model;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -25,6 +26,7 @@ public class Qualifier {
         this.id = id;
     }
 
+    @JsonValue
     public String getName() {
         return name;
     }

@@ -1,5 +1,7 @@
 package com.example.restfulappedital192024.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -7,6 +9,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "publications")
+@JsonPropertyOrder({
+        "title", "authors", "journal", "publicationYear", "published", "ePublished", "volume",
+        "issue", "pages", "doi", "pmid", "labels", "qualifiers", "iuid",
+        "url", "doiUrl", "pubMedUrl", "epublished", "issn", "issnL"
+})
 public class Publication {
 
     @Id
@@ -17,10 +24,12 @@ public class Publication {
     private String title;
 
     @OneToOne(mappedBy = "publication", cascade = CascadeType.ALL)
+    @JsonProperty("authors")
     private Author author;
 
     @Column(name = "journal", length = 255)
     private String journal;
+
 
     @Column(name = "issn", length = 9)
     private String issn;
@@ -28,6 +37,7 @@ public class Publication {
     @Column(name = "issn_l", length = 9)
     private String issnL;
 
+    @JsonProperty("year")
     @Column(name = "publication_year")
     private int publicationYear;
 

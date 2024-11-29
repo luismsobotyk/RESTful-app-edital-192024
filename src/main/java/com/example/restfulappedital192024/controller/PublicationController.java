@@ -28,6 +28,11 @@ public class PublicationController {
         return service.findByPublicationYear(year);
     }
 
+    @GetMapping("/create")
+    public Publication create(){
+        return service.create();
+    }
+
 
 
 
