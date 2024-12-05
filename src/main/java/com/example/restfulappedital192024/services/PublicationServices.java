@@ -64,8 +64,6 @@ public class PublicationServices {
         qualifiers.add(q2);
         publication.setQualifiers(qualifiers);
 
-        //a.getPublications().add(publication);
-        //b.getPublications().add(publication);
         return repository.save(publication);
     }
 
@@ -86,9 +84,9 @@ public class PublicationServices {
             publication.setDoi("DOI "+i);
         }
         publication.setPmid(i);
-        publication.setUrl("URL http://"+i+".com.br");
-        publication.setDoiUrl("DOI URL http://"+i+".com.br");
-        publication.setPubMedUrl("PUM MED URL http://"+i+".com.br");
+        publication.setUrl("URL http://"+i+"url.com.br");
+        publication.setDoiUrl("DOI URL http://"+i+"doiurl.com.br");
+        publication.setPubMedUrl("PUM MED URL http://"+i+"puburl.com.br");
         publication.setPublicationYear(year);
         publication.setPages("PAGES: "+i);
         return publication;

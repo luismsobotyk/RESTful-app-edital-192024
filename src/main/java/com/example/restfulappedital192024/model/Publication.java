@@ -90,6 +90,7 @@ public class Publication {
     private String pubMedUrl;
 
     public Publication() {
+        // Construtor
     }
 
     public String getIuid() {
@@ -198,14 +199,6 @@ public class Publication {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
-    }
-
-    public Date getePublished() {
-        return ePublished;
-    }
-
-    public void setePublished(Date ePublished) {
-        this.ePublished = ePublished;
     }
 
     public Set<Label> getLabels() {

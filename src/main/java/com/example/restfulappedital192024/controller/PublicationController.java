@@ -6,13 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import com.example.restfulappedital192024.services.PublicationServices;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class PublicationController {
-
-    private static final String template = "Hello %s!";
-    private static final AtomicLong counter = new AtomicLong();
 
     @Autowired
     private PublicationServices service;
