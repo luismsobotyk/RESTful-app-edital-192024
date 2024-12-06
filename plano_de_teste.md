@@ -6,7 +6,7 @@
 - Ferramenta de Verificação Estática: SonarLint
 - Ferramenta de Teste Unitário: JUnit
 - Ferramenta de Teste de Componente: Cypress
-- Ambiente de Integração contínua
+- Ambiente de Integração contínua: Github actions
 
 ## 2. Procedimentos
 1. Realizar commit no formato `[tipo]: descrição`.
@@ -59,6 +59,7 @@
   - /findByDoi: Agora com dados, fiz um teste que busca pela DOI: 10.1080/16549716.2024.2330758 e checa se o JSON retornado bate com os dados esperados;
   - /findByYear: Fiz um teste buscando por 2024 e vendo se o retorno é o esperado e fiz um teste 2025 que deve retornar a mensagem de erro.
 
-
+### 3.4 Github Actions
+- Foi configurado no commit [`e5c47be`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/e5c47beb70a4cff03cd42fc5caa0210d6869a642)
 
 
