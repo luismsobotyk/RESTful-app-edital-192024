@@ -62,8 +62,12 @@
 
 ### 5.2 Junit:
 - Foi criada a classe PublicationControllerTest para testar as 3 funcionalidades da api:
-  - /findByDoi: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado.
-  - /findByYear/{year}: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado.
-  - /create: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado.
+  - /findByDoi: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
+  - /findByYear/{year}: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
+  - /create: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
+
+### 5.3 Cypress:
+- 
+
 
 
