@@ -3,9 +3,8 @@
 ## 1. Ferramentas
 - Linguagem: Java
 - IDE: IntelliJ
-- Framework de Teste: JUnit
 - Ferramenta de Verificação Estática: SonarLint
-- Ferramenta de Teste Unitário: SonarLint
+- Ferramenta de Teste Unitário: JUnit
 - Ferramenta de Teste de Componente: Rest Assured
 - Ambiente de Integração contínua
 
@@ -62,3 +61,9 @@
 - [RestfulAppEdital192024Application.java](src/main/java/com/example/restfulappedital192024/ResTfulAppEdital192024Application.java): Nenhum problema encontrado
 
 ### 5.2 Junit:
+- Foi criada a classe PublicationControllerTest para testar as 3 funcionalidades da api:
+  - /findByDoi: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado.
+  - /findByYear/{year}: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado.
+  - /create: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado.
+
+
