@@ -5,7 +5,7 @@
 - IDE: IntelliJ
 - Ferramenta de Verificação Estática: SonarLint
 - Ferramenta de Teste Unitário: JUnit
-- Ferramenta de Teste de Componente: Rest Assured
+- Ferramenta de Teste de Componente: Cypress
 - Ambiente de Integração contínua
 
 ## 2. Procedimentos
@@ -64,10 +64,11 @@
 - Foi criada a classe PublicationControllerTest para testar as 3 funcionalidades da api:
   - /findByDoi: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
   - /findByYear/{year}: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
-  - /create: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
 
 ### 5.3 Cypress:
-- 
-
+- Os testes e configs do Cypress foram adicionados no commit [`8da51f6`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/40cfe51093d94fa55c80aca08571bd3153dd32da):
+  - /findByDoi: Agora com dados, fiz um teste que busca pela DOI: 10.1080/16549716.2024.2330758 e checa se o JSON retornado bate com os dados esperados;
+  - /findByYear: Fiz um teste buscando por 2024 e vendo se o retorno é o esperado e fiz um teste 2025 que deve retornar a mensagem de erro.
+  - 
 
 
