@@ -1,0 +1,62 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Configurar Java e Maven
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17' # Altere para a versão necessária
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven
+
+      # Instalar dependências Maven
+      - name: Install dependencies
+        run: mvn install -DskipTests=true
+
+      # Executar testes Maven
+      - name: Run Maven Tests
+        run: mvn test
+
+      # Configurar Node.js e Cypress
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Altere para a versão necessária
+
+      - name: Install Cypress dependencies
+        run: npm install
+        working-directory: ./cypress # Altere para o diretório do Cypress, se necessário
+
+      # Start application (simulando o servidor local)
+      - name: Start Application
+        run: |
+          mvn spring-boot:run &
+          sleep 10
+
+      # Executar testes do Cypress
+      - name: Run Cypress Tests
+        run: npx cypress run
+        working-directory: ./cypress # Altere para o diretório do Cypress, se necessário

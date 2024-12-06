@@ -14,19 +14,8 @@
 3. Realizar revisão do código antes de mergear.
 4. Executar o pipeline no GitHub Actions após merge.
 
-## 3. Requisitos, Restrições e Configurações
-- Requisitos:
-  - a preencher
-- Configurações:
-  - a preencher
-
-## 4. Matriz de Funcionalidades vs Testes
-| Funcionalidade | Teste Unitário | Teste de API  | Teste de Sistema | Observações |
-|----------------|----------------|---------------|------------------|-------------|
-| Exemplo        | Sim/Não        | Sim/Não       | Sim/Não          | Exemplo     |
-
-## 5. Instalação e uso das ferrametnas
-### 5.1 SonarLint:
+## 3. Instalação e uso das ferrametnas
+### 3.1 SonarLint:
 - [config/FileStorageConfig.java](src/main/java/com/example/restfulappedital192024/config/FileStorageConfig.java): Nenhum problema encontrado
 - [controller/PublicationController.java](src/main/java/com/example/restfulappedital192024/controller/PublicationController.java): 4 problemas encontrados:
   - Linha 14: Constant names should comply with a naming convetion: Resolvido ([`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/efa8d1d95a8ec91f7c18c863301eafbfd42c012b))
@@ -60,15 +49,16 @@
   - Linha 89: String literals should not be duplicated: Resolvido ([`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/efa8d1d95a8ec91f7c18c863301eafbfd42c012b))
 - [RestfulAppEdital192024Application.java](src/main/java/com/example/restfulappedital192024/ResTfulAppEdital192024Application.java): Nenhum problema encontrado
 
-### 5.2 Junit:
+### 3.2 Junit:
 - Foi criada a classe PublicationControllerTest para testar as 3 funcionalidades da api:
   - /findByDoi: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
   - /findByYear/{year}: Como a API não tem dados do jeito que foi desenvolvida pois trabalha com banco na memória sem persistência, apenas o status está sendo verificado e se o json de erro é retornado. [`efa8d1d`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/0d17bae3ddf9ff2fe78040cface0788d75a227e7)
 
-### 5.3 Cypress:
+### 3.3 Cypress:
 - Os testes e configs do Cypress foram adicionados no commit [`8da51f6`](https://github.com/luismsobotyk/RESTful-app-edital-192024/commit/40cfe51093d94fa55c80aca08571bd3153dd32da):
   - /findByDoi: Agora com dados, fiz um teste que busca pela DOI: 10.1080/16549716.2024.2330758 e checa se o JSON retornado bate com os dados esperados;
   - /findByYear: Fiz um teste buscando por 2024 e vendo se o retorno é o esperado e fiz um teste 2025 que deve retornar a mensagem de erro.
-  - 
+
+
 
 
